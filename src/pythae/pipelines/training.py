@@ -245,3 +245,4 @@ class TrainingPipeline(Pipeline):
         self.trainer = trainer
 
         trainer.train()
+        return trainer
