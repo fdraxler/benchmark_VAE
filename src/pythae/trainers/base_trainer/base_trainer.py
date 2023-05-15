@@ -1,6 +1,7 @@
 import datetime
 import logging
 import os
+import uuid
 from copy import deepcopy
 from typing import Any, Dict, List, Optional
 
@@ -241,6 +242,7 @@ class BaseTrainer:
 
         self._training_signature = (
             str(datetime.datetime.now())[0:19].replace(" ", "_").replace(":", "-")
+            + "_" + uuid.uuid4().hex[:4]
         )
 
         training_dir = os.path.join(
